@@ -5,7 +5,7 @@
 > 使用此组件需要依赖小程序基础库 2.2.3 以上版本，同时依赖开发者工具的 npm 构建。具体详情可查阅[官方 npm 文档](https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html)。
 
 ## 使用效果
-![navigation-view](https://holidaypenguin.github.io/miniprogram-keyboard-num/docs/GIF.gif)
+![navigation-view](https://holidaypenguin.github.io/miniprogram-keyboard-num/GIF.gif)
 
 ## 使用方法
 
