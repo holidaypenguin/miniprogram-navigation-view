@@ -6,7 +6,6 @@
 
 ## 使用效果
 ![navigation-view](https://www.holidaypenguin.com/miniprogram-navigation-view/images/GIF.gif)
-![keyboard-num](https://holidaypenguin.github.io/miniprogram-keyboard-num/images/GIF.gif)
 
 ## 使用方法
 
