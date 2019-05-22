@@ -1,5 +1,7 @@
 @import "./reset.wxss";
 
-.other {
-    font-size: 20px;
+.nowrap{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

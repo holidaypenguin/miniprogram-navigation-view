@@ -1,1 +1,6 @@
-<comp></comp>
+<view>
+  <comp title="首页"></comp>
+
+  <button bindtap="toOtherPage" style="margin-top: 200rpx;">去体验自定义标题</button>
+
+</view>

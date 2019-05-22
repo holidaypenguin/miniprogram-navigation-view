@@ -1,6 +1,69 @@
 @import "./common.wxss";
 @import "./reset.wxss";
 
-.index {
-  color: green;
+
+.view-nav-view {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 14px;
+  z-index: 490;
+  user-select: none;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  background-color: #3780F3;
+}
+.view-nav-view-left{
+  width: 220rpx;
+  display: flex;
+}
+.view-nav-view-back {
+  position: relative;
+  display: flex;
+  /* width: 80rpx; */
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 34rpx;
+}
+.view-nav-view-back--white{
+  color: #FFFFFF;
+}
+.view-nav-view-back--black{
+  color: #000000;
+}
+.view-nav-view-back-left {
+  display: inline-block;
+  height: 40rpx;
+  width: 25rpx;
+  margin-right: 25rpx;
+  margin-left: 25rpx;
+}
+.view-nav-view-center {
+  position: relative;
+  flex: 1;
+  text-align: left;
+  box-sizing: border-box;
+  padding: 0 90rpx 0 30rpx;
+  padding: 0;
+  /* height: 44px; */
+  text-align: center;
+  font-size: 34rpx;
+}
+.view-nav-view-center--white{
+  color: #FFFFFF;
+}
+.view-nav-view-center--black{
+  color: #000000;
+}
+.view-nav-view-right {
+  display: flex;
+  width: 220rpx;
+}
+.view-nav-view-more:after {
+  content: "\2022\0020\2022\0020\2022\0020";
+  font-size: 16px;
 }

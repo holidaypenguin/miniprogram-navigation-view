@@ -1,0 +1,20 @@
+<comp 
+  title="{{title}}"
+  title-style="{{titleStyle}}"
+  text-style="{{textStyle}}"
+  custom-style="{{customStyle}}"
+  back-delta="{{backDelta}}"
+  visible-back="{{visibleBack}}"
+  nav-class="nav-custom-class"
+  nav-title-class="nav-title-custom-class"
+  bind:back="backHandler">
+</comp>
+
+<view class="button-area">
+  <button bindtap="setTitle">点击设置title</button>
+  <button bindtap="setTextStyle">点击设置text-style</button>
+  <button bindtap="setTitleStyle">点击设置title-style属性</button>
+  <button bindtap="setCustomStyle">点击设置custom-style</button>
+  <button bindtap="setBackDelta">点击设置back-delta{{backDelta == 1 ? '' : '（当前不可返回）'}}</button>
+  <button bindtap="setVisibleBack">点击设置visible-back</button>
+</view>

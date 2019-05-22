@@ -1,125 +1,85 @@
-# miniprogram-custom-component
+# navigation-view
 
-小程序自定义组件开发模板：
+小程序自定义组件
 
-* 支持 less 编写 wxss
-* 使用 webpack 构建 js
-* 支持自定义组件单元测试
-* 支持 eslint
-* 支持多入口构建
+> 使用此组件需要依赖小程序基础库 2.2.3 以上版本，同时依赖开发者工具的 npm 构建。具体详情可查阅[官方 npm 文档](https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html)。
 
-## 使用
+## 使用效果
+![navigation-view](https://holidaypenguin.github.io/miniprogram-keyboard-num/docs/GIF.gif)
 
-* 使用[命令行工具](https://github.com/wechat-miniprogram/miniprogram-cli)进行初始化
-* 直接从 github 上 clone 下来
+## 使用方法
 
-## 开发
-
-1. 安装依赖：
+1. 安装 navigation-view：
 
 ```
-npm install
+npm install --save miniprogram-navigation-view
 ```
 
-2. 执行命令：
+2. 在需要使用 navigation-view 的页面 page.json 中添加 navigation-view 自定义组件配置
 
+```json
+{
+  "usingComponents": {
+    "navigation-view": "miniprogram-navigation-view"
+  }
+}
 ```
-npm run dev
-```
+3. WXML 文件中引用 navigation-view
 
-默认会在包根目录下生成 miniprogram\_dev 目录，src 中的源代码会被构建并生成到 miniprogram\_dev/components 目录下。如果需要监听文件变化动态构建，则可以执行命令：
-
-```
-npm run watch
-```
-
-> ps: 如果 minirpogram\_dev 目录下已存在小程序 demo，执行`npm run dev`则不会再将 tools 下的 demo 拷贝到此目录下。而执行`npm run watch`则会监听 tools 目录下的 demo 变动并进行拷贝。
-
-3. 生成的 miniprogram\_dev 目录是一个小程序项目目录，以此目录作为小程序项目目录在开发者工具中打开即可查看自定义组件被使用的效果。
-
-4. 进阶：
-
-* 如果有额外的构建需求，可自行修改 tools 目录中的构建脚本。
-* 内置支持 less、sourcemap 等功能，默认关闭。如若需要可以自行修改 tools/config.js 配置文件中相关配置。
-* 内置支持多入口构建，如若需要可自行调整 tools/config.js 配置文件的 entry 字段。
-* 默认开启 eslint，可自行调整规则或在 tools/config.js 中注释掉 eslint-loader 行来关闭此功能。
-
-## 发布
-
-> ps: 发布前得确保已经执行构建，小程序 npm 包只有构建出来的目录是真正被使用到的。
-
-1. 如果还没有 npm 帐号，可以到[ npm 官网](https://www.npmjs.com/)注册一个 npm 帐号。
-2. 在本地登录 npm 帐号，在本地执行：
-
-```
-npm adduser
+``` xml
+<navigation-view></navigation-view> 
 ```
 
-或者
+4. 根据需要禁用页面导航栏
 
+全局设置
+``` json
+{
+  "window": {
+    "navigationStyle": "custom"
+  }
+}
 ```
-npm login
-```
-
-3. 在已完成编写的 npm 包根目录下执行：
-
-```
-npm publish
-```
-
-到此，npm 包就成功发布到 npm 平台了。
-
-> PS：一些开发者在开发过程中可能修改过 npm 的源，所以当进行登录或发布时需要注意要将源切回 npm 的源。
-
-## 目录结构
-
-以下为推荐使用的目录结构，如果有必要开发者也可以自行做一些调整:
-
-```
-|--miniprogram_dev // 开发环境构建目录
-|--miniprogram_dist // 生产环境构建目录
-|--src // 源码
-|   |--components // 通用自定义组件
-|   |--images // 图片资源
-|   |
-|   |--xxx.js/xxx.wxml/xxx.json/xxx.wxss // 暴露的 js 模块/自定义组件入口文件
-|
-|--test // 测试用例
-|--tools // 构建相关代码
-|   |--demo // demo 小程序目录，开发环境下会被拷贝生成到 miniprogram_dev 目录中
-|   |--config.js // 构建相关配置文件
-|
-|--gulpfile.js
+页面设置
+``` json
+{
+  "navigationStyle": "custom"
+}
 ```
 
-> PS：对外暴露的 js 模块/自定义组件请放在 src 目录下，不宜放置在过深的目录。另外新增的暴露模块需要在 tools/config.js 的 entry 字段中补充，不然不会进行构建。
+## navigation-view的属性介绍如下：
 
-## 测试
+| 属性名      | 类型        | 默认值     | 是否必须        | 说明          |
+|------------|-------------|------------|----------------|---------------|
+| title   |   String   |  自定义导航栏视图  |  -  |  标题居中显示，如果长度超长省略号显示  |
+| title-style   |   Object | String   |  -  |  -  |  设置标题文字样式，可以是字符串或者对象，具体用法查看例子；如果设置了字体颜色，将覆盖 text-style设置的字体颜色  |
+| text-style   |   String   |  white  |  -  |  对应页面的 navigationBarTextStyle 导航栏标题颜色，仅支持 black / white  |
+| custom-style   |   Object | String   |  -  |  -  |  设置导航栏样式，可以是字符串或者对象，具体用法查看例子  |
+| back-delta   |   Number   |  1  |  -  |  点击返回回退指定数量的页面，如果为0不回退进发送回退事件，使用者自行处理；如果有0切换到大于0的数，则立即执行回退  |
+| visible-back   |   Boolean   |  true  |  -  |  显示返回按钮，不显示则返回事件也不会发送  |
+| nav-class   |   String   |  -  |  -  |  导航栏外部样式  |
+| nav-title-class   |   String   |  -  |  -  |  标题外部样式  |
 
-* 执行测试用例：
+## navigation-view的事件介绍如下：
 
+### back事件
+只要存在返回按钮，手动点击返回按钮就会发送该事件
+
+## navigation-view的slot介绍如下：
+
+### back slot
+
+可在当前返回图标之后添加文字
+``` js
+<view slot="back">返回</view>
 ```
-npm run test
+
+### back-after slot
+可在返回后面自定义一段内容
+``` js
+<view slot="back-after"><icon></icon></view>
 ```
 
-* 检测覆盖率：
+## 注意
 
-```
-npm run coverage
-```
-
-测试用例放在 test 目录下，使用 **miniprogram-simulate** 工具集进行测试，[点击此处查看](https://github.com/wechat-miniprogram/miniprogram-simulate/blob/master/README.md)使用方法。在测试中可能需要变更或调整工具集中的一些方法，可在 test/utils 下自行实现。
-
-## 其他命令
-
-* 清空 miniprogram_dist 目录：
-
-```
-npm run clean
-```
-
-* 清空 miniprogam_dev 目录：
-
-```
-npm run clean-dev
-```
+- 因为表头采用的是`display: fixed;`布局，因此需要获取导航栏高度`wx.STATUS_BAR_HEIGHT + wx.DEFAULT_HEADER_HEIGHT`，这两个参数是导航栏自己设定的。

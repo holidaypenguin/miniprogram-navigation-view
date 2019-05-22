@@ -1,1 +1,37 @@
-<view class="index other">{{prop}}-{{flag}}</view>
+
+<cover-view 
+  class="view-nav-view nav-class" 
+  style="{{ selfCustomStyle }}" 
+  bindtap="doubleTap">
+  
+  <!-- 左结构 -->
+  <cover-view 
+    class="view-nav-view-left">
+      <!-- 返回 -->
+      <cover-view 
+        class="view-nav-view-back view-nav-view-back--{{_textStyle}}" 
+        style="{{ selfLineHeight }}"
+        wx:if="{{pageDeep > 1 && visibleBack && config.customNavigation}}"
+        bindtap="backHandler"
+        >
+        <cover-image 
+          src='./images/nav_icon_{{_textStyle}}.png' 
+          class='view-nav-view-back-left'></cover-image>
+        <slot name="back"></slot>
+      </cover-view>
+    <!-- 返回剩余空间 -->
+    <slot name="back-after"></slot>
+  </cover-view>
+
+  <!-- 中结构 -->
+  <cover-view 
+    class="view-nav-view-center nowrap view-nav-view-center--{{_textStyle}} nav-title-class" 
+    style='{{ selfTitleStyle }}'
+    wx:if="{{config.customNavigation}}">{{title}}</cover-view>
+
+  <!-- 右结构 -->
+  <cover-view 
+    class='view-nav-view-right' 
+    style="{{ selfLineHeight }}"></cover-view>
+
+</cover-view> 

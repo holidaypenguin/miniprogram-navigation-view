@@ -1,5 +1,5 @@
 {
-  "name": "miniprogram-navigation-bar",
+  "name": "miniprogram-navigation-view",
   "version": "0.0.1",
   "description": "",
   "main": "miniprogram_dist/index.js",
@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/holidaypenguin/miniprogram-navigation-bar.git"
+    "url": "https://github.com/holidaypenguin/miniprogram-navigation-view.git"
   },
   "author": "holidaypenguin",
   "license": "MIT",
@@ -58,6 +58,5 @@
     "vinyl": "^2.2.0",
     "webpack": "^4.29.5",
     "webpack-node-externals": "^1.7.2"
-  },
-  "dependencies": {}
+  }
 }
