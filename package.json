@@ -1,7 +1,7 @@
 {
   "name": "miniprogram-navigation-view",
   "version": "0.0.1",
-  "description": "",
+  "description": "小程序自定义组件(导航栏视图)",
   "main": "miniprogram_dist/index.js",
   "scripts": {
     "dev": "gulp dev --develop",
@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/holidaypenguin/miniprogram-navigation-view.git"
+    "url": "git+https://github.com/holidaypenguin/miniprogram-navigation-view.git"
   },
   "author": "holidaypenguin",
   "license": "MIT",
@@ -58,5 +58,13 @@
     "vinyl": "^2.2.0",
     "webpack": "^4.29.5",
     "webpack-node-externals": "^1.7.2"
+  },
+  "bugs": {
+    "url": "https://github.com/holidaypenguin/miniprogram-navigation-view/issues"
+  },
+  "homepage": "https://github.com/holidaypenguin/miniprogram-navigation-view#readme",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
   }
 }

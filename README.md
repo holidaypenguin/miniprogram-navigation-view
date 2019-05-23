@@ -52,9 +52,9 @@ npm install --save miniprogram-navigation-view
 | 属性名      | 类型        | 默认值     | 是否必须        | 说明          |
 |------------|-------------|------------|----------------|---------------|
 | title   |   String   |  自定义导航栏视图  |  -  |  标题居中显示，如果长度超长省略号显示  |
-| title-style   |   Object | String   |  -  |  -  |  设置标题文字样式，可以是字符串或者对象，具体用法查看例子；如果设置了字体颜色，将覆盖 text-style设置的字体颜色  |
+| title-style   |   Object \| String   |  -  |  -  |  设置标题文字样式，可以是字符串或者对象，具体用法查看例子；如果设置了字体颜色，将覆盖 text-style设置的字体颜色  |
 | text-style   |   String   |  white  |  -  |  对应页面的 navigationBarTextStyle 导航栏标题颜色，仅支持 black / white  |
-| custom-style   |   Object | String   |  -  |  -  |  设置导航栏样式，可以是字符串或者对象，具体用法查看例子  |
+| custom-style   |   Object \| String   |  -  |  -  |  设置导航栏样式，可以是字符串或者对象，具体用法查看例子  |
 | back-delta   |   Number   |  1  |  -  |  点击返回回退指定数量的页面，如果为0不回退进发送回退事件，使用者自行处理；如果有0切换到大于0的数，则立即执行回退  |
 | visible-back   |   Boolean   |  true  |  -  |  显示返回按钮，不显示则返回事件也不会发送  |
 | nav-class   |   String   |  -  |  -  |  导航栏外部样式  |
@@ -69,13 +69,13 @@ npm install --save miniprogram-navigation-view
 
 ### back slot
 
-可在当前返回图标之后添加文字
+可在当前返回图标之后添加文字兄弟节点作为返回按钮的子节点，作为返回按钮的一部分
 ``` js
 <view slot="back">返回</view>
 ```
 
 ### back-after slot
-可在返回后面自定义一段内容
+可在返回按钮后面自定义一个兄弟节点，不作为返回按钮的一部分
 ``` js
 <view slot="back-after"><icon></icon></view>
 ```
