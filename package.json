@@ -1,6 +1,6 @@
 {
   "name": "miniprogram-navigation-view",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "小程序自定义组件(导航栏视图)",
   "main": "miniprogram_dist/index.js",
   "scripts": {
